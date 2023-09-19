@@ -1,0 +1,21 @@
+BLOOLEAN 
+
+== - Comparam somente valor
+
+ex: 5 == "5"
+
+return: true 
+
+=== - Compara primeiramente o tipo e valor 
+
+ex: 5 === "5"
+
+return: false, 5 e tipo number, e "5" um string (texto)
+
+-------------------------------------------------------------
+
+!= - valor nao e igual 
+
+!== tipo e valor nao igual 
+
+-------------------------------------------------------------
