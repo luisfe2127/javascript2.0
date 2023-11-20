@@ -19,3 +19,80 @@ return: false, 5 e tipo number, e "5" um string (texto)
 !== tipo e valor nao igual 
 
 -------------------------------------------------------------
+
+CRIANDO ELEMENTOS (DOM) 
+
+const div = document.creatElement('div');
+div.innerHTML = 'Ola mundo'
+
+console.log(div)
+
+(ex: voce declarou a tag div na variavel div. Depois, voce pede pra div transmitir a mensegem 'Ola mundo' no console.log (apenas disponivel no js))
+
+---------------------------------------------------------------
+
+ADICIONANDO ELEMENTOS JS NO HTML
+
+html:
+
+<div id="container"></div>
+
+js: 
+
+const container = document.getElementById('container');
+const logo = document.creatElement('img');
+
+logo.src = '(caminho do arquivo da imagem';
+
+container.appendChild(remove para remover)('logo')
+
+(ex: voce declara a sua div container no html como variavel. Depois cria o elemento 'img' na variavel logo. Depois voce escolhe a imagem que deseja adicionar na variavel logo usando o logo.src. Depois, voce transmite essa imagem na div container usando container.appendChild('logo') 
+
+const text = document.creatElement('h1');
+
+text.innerHTML = 'logo do html'
+
+text.appendChild('text')
+
+(ex: voce adicionou a tag h1 escrito "logo html" embaixo da imagem)
+
+--------------------------------------------------------------------
+
+childNodes = serve para capturar seus parentes de baixo
+
+<main>
+<div>
+<ul>
+<li> item 01
+<li> item 02
+<li> item 03
+<ul>
+<div>
+<main>
+
+script:
+
+console.log(ul.childNodes[1])
+
+ex: o console.log apresentara todos itens da tag ul, mas o item 1 sera marcado pelo [1].
+
+O valor pode ser modificado, ex:
+
+ul.childNodes.innerHTML = 'Ola mundo'
+
+console.log(ul.childNodes[1])
+
+ex: assim, o item 1 ( o item selecionado ([1])) sera alterado pelo 'Ola mundo'
+
+parentNode = serve para capturar seus parentes de cima
+
+ex:
+
+console.log(ul.parentNode.parentNode.parent.Node)
+
+ex: o console.log mostrara as tres tags acima da ul
+
+
+
+
+
