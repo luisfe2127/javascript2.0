@@ -3,9 +3,9 @@ let y
 let z
 
 document.getElementById('gerar').onclick = function() {
-    x = Math.floor(Math.random() * 6) ;
-    y = Math.floor(Math.random() * 6) ;
-    z = Math.floor(Math.random() * 6) ;
+    x = Math.floor(Math.random() * 6) + 1;
+    y = Math.floor(Math.random() * 6) + 1;
+    z = Math.floor(Math.random() * 6) + 1;
 
     document.getElementById('xlabel').innerHTML = x;
     document.getElementById('ylabel').innerHTML = y;
