@@ -1,9 +1,9 @@
-let first = "João"
-let last = "Pedro"
-let age = 17
-let favoriteColor = "Blue"
-let dateNasciment = 20/10/21
+let scholl = {
+    name: "George",
+    age: 17,
+    serie: 3,
+    media: 7.5,
+}
 
-
-    console.log(return this.first + " " + this.last)
+console.log(`${scholl.name}, ${scholl.age} anos de idade, passou a ${scholl.serie}º serie com sua média de ${scholl.media} pontos`)
 
