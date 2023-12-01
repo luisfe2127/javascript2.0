@@ -13,14 +13,16 @@ function gerar() {
    let bi3 = Number(bi3x.value)
    let bi4 = Number(bi4x.value)
 
-   const resultado = (bi1 + bi2 + bi3 + bi4) / 4
+   let resultado = (bi1 + bi2 + bi3 + bi4) / 4
 
-   if(resultado >= 6) {
-    res.innerHTML = `${nome.value} da instituição ${escola.value}, foi aprovado da ${serie.value}º Série com a média total de ${resultado} pontos.`
+   if (resultado > 10) {
+      window.alert("O valor deve ser igual ou menor que 10")
+   } else if(resultado >= 6) {
+    res.innerHTML = `${nome.value} da instituição ${escola.value}, foi aprovado da ${serie.value}º Série com a média total de ${parseInt(resultado)} pontos.`
    } else if (resultado >= 5) {
-    res.innerHTML = `${nome.value} da instituição ${escola.value}, está de recuperação da ${serie.value}º Série com a média total de ${resultado} pontos.`
+    res.innerHTML = `${nome.value} da instituição ${escola.value}, está de recuperação da ${serie.value}º Série com a média total de ${parseInt(resultado)} pontos.`
    } else {
-    res.innerHTML = `${nome.value} da instituição ${escola.value}, está reprovado/retido da ${serie.value}º Série com a média total de ${resultado} pontos.`
+    res.innerHTML = `${nome.value} da instituição ${escola.value}, está reprovado/retido da ${serie.value}º Série com a média total de ${parseInt(resultado)} pontos.`
    }
 }
 
