@@ -25,3 +25,6 @@ const gatoRaivoso = {
 
 Object.setPrototypeOf(gatoRaivoso, gato)
 gatoRaivoso.emitirSom()
+
+console.log(Object.getPrototypeOf(gatoRaivoso))
+
