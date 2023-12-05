@@ -10,4 +10,4 @@ let object2 = {
     name: "Bills",
 }
 
-object2.__proto__ = object
+console.log(object2.__proto__ = object)
