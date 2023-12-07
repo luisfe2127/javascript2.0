@@ -52,3 +52,9 @@ let x2c = String(x2a)
 
 console.log(x2c)
 
+let a = 1.015
+console.log(a)
+console.log(typeof a)
+console.log(a.toString())
+console.log(typeof a.toString())
+
