@@ -25,3 +25,4 @@ obj.p5 = () => console.log("TLOU")
 console.log(obj.p3)
 console.log(obj["p4"])
 obj.p5()
+
