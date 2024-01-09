@@ -6,6 +6,8 @@
 //size: informa o tamanho da pilha 
 //print: mostrar pilha no console 
 
+//PILHA
+
 function Stack() {
     let items = []
     
