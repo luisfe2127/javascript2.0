@@ -2,7 +2,7 @@
 //pop = remove o ultimo elemento 
 //shift = remove o primeiro elemento
 //unshift = adiciona um elemento para o primeiro elemento dentro de uma array ou variavel constante 
-//
+//reverse = deixar ao contrario (reverter)
 
 
 
@@ -27,6 +27,18 @@ const filaDoBanco = []
 
  console.log(filaDoBanco)
 
+ filaDoBanco.reverse()
+
+ console.log(filaDoBanco)
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
  let _v = 0;
 
  let obj = {
