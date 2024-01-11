@@ -31,14 +31,6 @@ const filaDoBanco = []
 
  console.log(filaDoBanco)
 
-
-
- 
- 
- 
- 
- 
- 
  let _v = 0;
 
  let obj = {
