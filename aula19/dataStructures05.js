@@ -1,30 +1,31 @@
-const obj1 = {
-    data: 1000
-};
-
-const obj2 = {
-    data: 2000
-};
-
-obj1.next = obj2
-
-console.log(obj1)
-
-
-
-
-class Node {
-    constructor(val) {
+// We create a class for each node within the list
+class Node{
+    // Each node has two properties, its value and a pointer that indicates the node that follows
+    constructor(val){
         this.val = val
-        this.next = null 
+        this.next = null
     }
 }
 
-class singlyLinkedList {
-    constructor() {
+// We create a class for the list
+class SinglyLinkedList{
+    // The list has three properties, the head, the tail and the list size
+    constructor(){
         this.head = null
         this.tail = null
-        this.lenght = 0
+        this.length = 0
     }
-
+    // The push method takes a value as parameter and assigns it as the tail of the list
+    push(val) {
+        const newNode = new Node(val)
+        if (!this.head){
+            this.head = newNode
+            this.tail = this.head
+        } else {
+            this.tail.next = newNode
+            this.tail = newNode
+        }
+        this.length++
+        return this
+    }
 }
