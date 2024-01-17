@@ -29,3 +29,9 @@ class SinglyLinkedList{
         return this
     }
 }
+
+const myList = new SinglyLinkedList();
+
+myList.push(10).push(20).push(30);
+
+console.log(myList);
