@@ -16,9 +16,10 @@ class SinglyLinkedList{
         this.length = 0
     }
     // The push method takes a value as parameter and assigns it as the tail of the list
-    push(val) {
+    push (val) {
         const newNode = new Node(val)
-        if (!this.head){
+
+        if(!this.head) {
             this.head = newNode
             this.tail = this.head
         } else {
@@ -28,6 +29,7 @@ class SinglyLinkedList{
         this.length++
         return this
     }
+
 }
 
 const myList = new SinglyLinkedList();
