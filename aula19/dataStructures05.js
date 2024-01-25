@@ -16,10 +16,9 @@ class SinglyLinkedList{
         this.length = 0
     }
     // The push method takes a value as parameter and assigns it as the tail of the list
-    push (val) {
+    push(val) {
         const newNode = new Node(val)
-
-        if(!this.head) {
+        if (!this.head){
             this.head = newNode
             this.tail = this.head
         } else {
@@ -29,11 +28,21 @@ class SinglyLinkedList{
         this.length++
         return this
     }
-
-}
-
-const myList = new SinglyLinkedList();
-
-myList.push(10).push(20).push(30);
-
-console.log(myList);
+    // The pop method removes the tail of the list
+    pop() {
+        if (!this.head) return undefined
+        const current = this.head
+        const newTail = current
+        while (current.next) {
+            newTail = current
+            current = current.next
+        }
+        this.tail = newTail
+        this.tail.next = null
+        this.length--
+        if (this.length === 0) {
+            this.head = null
+            this.tail = null
+        }
+        return current
+    }}
