@@ -1,21 +1,21 @@
-// We create a class for each node within the list
+
 class Node{
-    // Each node has two properties, its value and a pointer that indicates the node that follows
+
     constructor(val){
         this.val = val
         this.next = null
     }
 }
 
-// We create a class for the list
+
 class SinglyLinkedList{
-    // The list has three properties, the head, the tail and the list size
+    
     constructor(){
         this.head = null
         this.tail = null
         this.length = 0
     }
-    // The push method takes a value as parameter and assigns it as the tail of the list
+    
     push(val) {
         const newNode = new Node(val)
         if (!this.head){
@@ -28,21 +28,73 @@ class SinglyLinkedList{
         this.length++
         return this
     }
-    // The pop method removes the tail of the list
-    pop() {
+
+   pop(count = 1) {
+    if (!this.head || count <= 0) return undefined;
+
+    let current = this.head;
+    let newTail = current;
+
+    // Encontrar o novo tail após a remoção de n nós
+    for (let i = 0; i < count && current.next; i++) {
+        newTail = current;
+        current = current.next;
+    }
+
+    // Atualizar o tail e o next do novo tail
+    this.tail = newTail;
+    this.tail.next = null;
+
+    this.length -= count;
+
+    // Atualizar head e tail se a lista estiver vazia
+    if (this.length === 0) {
+        this.head = null;
+        this.tail = null;
+    }
+
+    return current;
+    }
+
+    shift() {
         if (!this.head) return undefined
-        const current = this.head
-        const newTail = current
-        while (current.next) {
-            newTail = current
-            current = current.next
-        }
-        this.tail = newTail
-        this.tail.next = null
+        let currentHead = this.head
+        this.head = currentHead.next
+
         this.length--
-        if (this.length === 0) {
-            this.head = null
+
+        if(this.length === 0) {
             this.tail = null
         }
-        return current
-    }}
+    }
+
+    unshift(val) {
+        const newNode = new Node(val)
+
+        if(!this.head) {
+            this.head = newNode
+            this.tail = this.head 
+        }
+
+        newNode.next = this.head
+        this.head = newNode 
+
+        this.length++
+
+        return this
+     }
+    }
+
+    const myList = new SinglyLinkedList();
+
+    myList.push(10).push(20).push(30).push(40).push(50)
+
+    myList.shift()
+    myList.shift()
+
+    myList.unshift(20).unshift(10)
+
+
+    console.log(myList);
+
+    
