@@ -83,6 +83,30 @@ class SinglyLinkedList{
 
         return this
      }
+
+     get(index) {
+        if(index < 0 || index >= this.length) return null
+
+        let current = this.head 
+        let counter = 0
+
+        while(counter !== index) {
+            current = current.next
+            counter++
+        }
+        return current 
+     }
+
+     set(index, val) {
+        let foundNode = this.get(index)
+
+        if (foundNode) {
+            foundNode.val = val
+            return true
+        } else {
+            return false 
+        }
+     }
     }
 
     const myList = new SinglyLinkedList();
@@ -94,7 +118,13 @@ class SinglyLinkedList{
 
     myList.unshift(20).unshift(10)
 
+    myList.set(1, 25)
 
     console.log(myList);
+
+    let nodeVal2 = myList.get(4)
+
+    console.log(`Utilizando o metodo get, o valor imprimido será: ${nodeVal2.val}`)
+    
 
     
