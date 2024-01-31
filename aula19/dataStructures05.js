@@ -29,31 +29,22 @@ class SinglyLinkedList{
         return this
     }
 
-   pop(count = 1) {
-    if (!this.head || count <= 0) return undefined;
-
-    let current = this.head;
-    let newTail = current;
-
-    // Encontrar o novo tail após a remoção de n nós
-    for (let i = 0; i < count && current.next; i++) {
-        newTail = current;
-        current = current.next;
-    }
-
-    // Atualizar o tail e o next do novo tail
-    this.tail = newTail;
-    this.tail.next = null;
-
-    this.length -= count;
-
-    // Atualizar head e tail se a lista estiver vazia
-    if (this.length === 0) {
-        this.head = null;
-        this.tail = null;
-    }
-
-    return current;
+    pop() {
+        if (!this.head) return undefined
+        const current = this.head
+        const newTail = current
+        while (current.next) {
+            newTail = current
+            current = current.next
+        }
+        this.tail = newTail
+        this.tail.next = null
+        this.length--
+        if (this.length === 0) {
+            this.head = null
+            this.tail = null
+        }
+        return current
     }
 
     shift() {
@@ -121,6 +112,19 @@ class SinglyLinkedList{
         this.length++
 
         return true
+     }
+
+     remove(index) {
+        if(index < 0 || index >= this.length) return undefined
+        if(index > this.length) return this.get(index - 1)
+        if(index === 0) return this.shift()
+
+        const previousNode = this.get(index - 1)
+        const remove = previousNode.next
+        previousNode.next = remove.next
+        this.length--
+
+        return remove
      }
     }
 
