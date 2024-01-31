@@ -1,7 +1,7 @@
 //push = adiciona +1
 //pop = remove o ultimo elemento 
 //shift = remove o primeiro elemento
-//unshift = adiciona um elemento para o primeiro elemento dentro de uma array ou variavel constante 
+//unshift = adiciona um elemento para o primeiro elemento dentro de uma array
 //reverse = deixar ao contrario (reverter)
 
 

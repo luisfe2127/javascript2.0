@@ -31,8 +31,8 @@ class SinglyLinkedList{
 
     pop() {
         if (!this.head) return undefined
-        const current = this.head
-        const newTail = current
+        let current = this.head
+        let newTail = current
         while (current.next) {
             newTail = current
             current = current.next
@@ -126,6 +126,22 @@ class SinglyLinkedList{
 
         return remove
      }
+
+     reverse() {
+        let node = this.head
+        this.head = this.tail
+        this.tail = node
+        let next
+        let prev = null
+
+        for(let i = 0; i < this.length; i++) {
+            next = node.next
+            node.next = prev
+            prev = node
+            node = next
+        }
+        return this
+     }
     }
 
     const myList = new SinglyLinkedList();
@@ -138,6 +154,9 @@ class SinglyLinkedList{
     myList.unshift(20).unshift(10)
 
     myList.set(1, 25)
+
+    myList.reverse()
+
 
     console.log(myList);
 
