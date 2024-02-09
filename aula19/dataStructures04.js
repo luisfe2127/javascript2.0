@@ -3,6 +3,9 @@
 //shift = remove o primeiro elemento
 //unshift = adiciona um elemento para o primeiro elemento dentro de uma array
 //reverse = deixar ao contrario (reverter)
+//get = captura/imprime qualquer valor de uma lista
+//set = pode modificar qualquer valor de uma lista (por isso, o metodo get e super importante para o set funcionar)
+//remove = remove qualquer valor em qualquer posiçao 
 
 
 

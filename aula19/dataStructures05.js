@@ -1,3 +1,4 @@
+//LISTA INDIVIDUALMENTE VINCULADAS 
 
 class Node{
 
