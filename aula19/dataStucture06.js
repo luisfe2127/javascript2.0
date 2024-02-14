@@ -90,11 +90,11 @@ class DoublyLinkedList {
 
     get(index) {
 
-        if (index < 0 || index >= this.length) return undefined;
+        if(index < 0 || index >= this.length) return undefined;
 
         let current, count
 
-        if (index <= this.length/2) {
+        if(index <= this.length/2) {
 
             current = this.head
             count = 0
@@ -116,8 +116,48 @@ class DoublyLinkedList {
         }
 
         return current
+    
+    }
 
+    set(index, val) {
+
+        var foundNode = this.get(index)
+
+        if(foundNode != null) {
+            
+            foundNode.val = val
+            return true
+
+        } else {
+            
+            return false 
+
+        }
+    }
+
+    insert(index, val) {
+
+        if(index < 0 || index > this.length) return false
+        if(index === this.length) return this.push(val)
+        if(index === 0) return this.unshift(val)
+
+        let newNode = new Node(val)
+        let beforeNode = this.get(index-1)
+        let afterNode = beforeNode.next
+
+        beforeNode = newNode, newNode.prev = afterNode
+        newNode = afterNode, afterNode.prev = newNode
+
+        this.length++
+
+        return tre
 
     }
 
 }
+
+let myList = new DoublyLinkedList()
+
+myList.push(10).push(20).push(30).push(40).push(50)
+
+console.log(myList)

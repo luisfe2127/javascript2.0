@@ -6,6 +6,7 @@
 //get = captura/imprime qualquer valor de uma lista
 //set = pode modificar qualquer valor de uma lista (por isso, o metodo get e super importante para o set funcionar)
 //remove = remove qualquer valor em qualquer posiçao 
+//Insert = pode adionar qualquer valor em qualquer posiçao da lista
 
 
 
