@@ -20,7 +20,7 @@ push(value) {
 
     const newNode = new Node(value)
 
-    if(value === null) {
+    if(this.root === null) {
         this.root = newNode
         return this
     }
@@ -28,16 +28,17 @@ push(value) {
     let current = this.root
 
     while(true) {
-        if(value === current.value) return undefined
+        if(current === null || value === current.value) return undefined
+
         if(value < current.value) {
-            if(value === null) {
-                this.left = newNode
+            if(current.left === null) {
+                current.left = newNode
                 return this
             } 
                 current = current.left
             } else {
-                if(this.right === null) {
-                    this.right = newNode
+                if(current.right === null) {
+                    current.right = newNode
                     return this
                 }
             } 
@@ -58,13 +59,28 @@ push(value) {
                     current = current.right
                 } else {
                     found = true
+                    break
                 }
-
-                if(!found) return undefined
-                return current
             }
+            return found ? current.value : undefined
         }
+
     }
+
+    const arvore = new BinarySearchTree();
+
+    arvore.push(10)
+    arvore.push(5)
+    arvore.push(15)
+    arvore.push(2)
+    arvore.push(17)
+    arvore.push(14)
+    arvore.push(13)
+
+    console.log(arvore)
+
+    console.log(arvore.get(90))
+    
 
     
 
