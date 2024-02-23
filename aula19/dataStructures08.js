@@ -28,7 +28,18 @@ class Graph {
 
         this.adjacencyList[node2] = this.adjacencyList[node2].filter(v => v !== node1)
     }
-}
+
+    removeNode(node) {
+        while (this.adjacencyList[node] != null) {
+            const adjacentNode = this.adjacencyList[node].pop();
+            if (adjacentNode == null) break;
+            this.removeConnection(node, adjacentNode);
+        }
+        delete this.adjacencyList[node];
+    }
+    }
+
+
 
 let local = new Graph()
 
@@ -38,7 +49,6 @@ local.addConnection("Brasil", "India")
 local.addConnection("Brasil", "China")
 local.addConnection("Brasil", "South Africa")
 local.addConnection("Brasil", "EUA")
-local.removeConnection("Brasil", "EUA")
-local.removeConnection("Brasil", "South Africa")
+local.removeNode("India")
 
 console.log(local)
