@@ -1,50 +1,23 @@
-let valor = document.getElementById("ivalor");
-let res = document.getElementById("res");
-let valores = document.getElementById("ivalores");
+const linkedList = new LinkedList();
 
- document.getElementById("enviar").onclick = function() {
+    linkedList.push(10);
+    linkedList.push(20);
+    linkedList.push(30);
 
-class Node {
+    linkedList.unshift(5);
+    linkedList.unshift(1);
 
-    constructor(valor) {
+    linkedList.insert(2, 15);
+    linkedList.remove(4);
 
-        this.valor = valor
-        this.next = null
+    linkedList.reverse();
+
+    const outputElement = document.getElementById("output");
+    let current = linkedList.head;
+    while (current) {
+        const li = document.createElement("li");
+        li.innerText = current.data;
+        outputElement.appendChild(li);
+        current = current.next;
     }
-}
-    
-    class listLinkedImplementation {
-
-    constructor() {
-
-        this.head = head
-        this.tail = tail
-        this.length = length
-
-    }
-
-push(valor) {
-
-    const newNode = new Node(valor)
-
-    if(this.head === null) {
-
-        this.head = newNode
-        this.tail = this.head
-
-    } else {
-
-    this.tail.next = newNode
-    this.tail = newNode
-
-    }
-
-    this.length++
-    return this 
-}
-
- document.getElementById("ivalores").innerHTML = return this
-
- }
- }
 
