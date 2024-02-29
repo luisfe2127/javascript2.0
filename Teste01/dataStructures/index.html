@@ -3,43 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manipulando Elementos</title>
+    <title>Manipulação de Lista Encadeada</title>
 </head>
 <body>
 
-    <h1>Crie uma lista:</h1>
+    <h1>Manipulação de Lista Encadeada</h1>
 
-    <div id="res">
+    <div id="res"></div>
 
-    </div>
+    <h2>Adicionar Valor:</h2>
+    <input type="number" id="addValue" placeholder="Valor a adicionar">
+    <input type="submit" id="addButton" value="Adicionar" onclick="addValue()">
 
-    <form action="get">
+    <h2>Remover Valor do Início:</h2>
+    <button onclick="removeFromStart()">Remover do Início</button>
 
-        Adicione um valor em qualquer posição da lista: <input type="number" name="number" id="addNumber"> <input type="number" name="number" id="addPositionNumber"> <input type="submit" id="submitPositionNumber" onclick="submitPositionNumber()"> <br><br> 
+    <h2>Remover Valor do Final:</h2>
+    <button onclick="removeFromEnd()">Remover do Final</button>
 
-        Adicione um valor para o final da lista:<input type="number" name="number" id="addLastNumber"> <input type="submit" id="submitLastNumber" onclick="submitLastNumber()"> <br><br>
+    <h2>Remover Valor por Posição:</h2>
+    <input type="number" id="removePosition" placeholder="Posição a remover">
+    <input type="submit" value="Remover" onclick="removeByPosition()">
 
-        Adicione um valor para o inicio da lista: <input type="number" name="number" id="addFirstNumber">  Enviar<input type="button" name="submite" id="firstSubmite"> <br><br>
+    <h2>Obter Valor por Posição:</h2>
+    <input type="number" id="getPosition" placeholder="Posição a obter">
+    <input type="submit" value="Obter" onclick="getValueByPosition()">
 
-        Altere qualquer valor da lista: <input type="number" name="number" id="changeNumber"> <input type="number" name="number" id="positionChangeNumber"> <input type="button" name="number" id="submiteChangeNumber"> <br><br>
-
-        Apague o último valor: <input type="button" name="number" id="removeLastNumber">  <br><br>
-
-        Apague o primeiro valor: <input type="button" name="number" id="removeFirstNumber"> <br><br>
-
-        Remova qualquer valor da lista: <input type="number" name="number" id="removeNumber"> <br><br>
-
-        Imprima/capture um valor: <input type="number" name="number" id="captureNumber"> Enviar<input type="button" name="number" id="submiteCaptureNumber"><br><br>
-
-        Inverta a lista: <input type="button" name="number" id="invertNumbers"> <br><br>
-
-    </form>
+    <h2>Alterar Valor por Posição:</h2>
+    <input type="number" id="changePosition" placeholder="Posição a alterar">
+    <input type="number" id="newValue" placeholder="Novo valor">
+    <input type="submit" value="Alterar" onclick="changeValueByPosition()">
 
     <script src="listScript.js"></script>
 
-
-
-
-    
 </body>
 </html>
