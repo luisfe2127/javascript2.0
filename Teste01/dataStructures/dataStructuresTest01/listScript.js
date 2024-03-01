@@ -156,15 +156,15 @@ class LinkedList {
     // Imprimir lista
     displayList() {
         let current = this.head;
-        let list = [];
-        while (current) {
-            list.push(current.value);
+        let listDisplay = document.getElementById('listDisplay');
+        let listContent = '';
+        
+        while (current !== null) {
+            listContent += current.value + ' -> ';
             current = current.next;
         }
-        document.getElementById('res').innerHTML = `<p>${list.join(' -> ')}</p>
-            <p>Head: ${this.head ? this.head.value : 'null'}</p>
-            <p>Tail: ${this.tail ? this.tail.value : 'null'}</p>
-            <p>Length: ${this.length}</p>`;
+        
+        listDisplay.textContent = listContent;
     }
 }
 

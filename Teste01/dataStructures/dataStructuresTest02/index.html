@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árvore</title>
+</head>
+<body>
+
+    <h1>Crie e manipule sua matrix</h1>
+
+    <div id="displayList">
+
+    </div>
+
+    <h2>Adicione um valor (pai):</h2>
+    <input type="number" name="number" id="addVal" placeholder="Adicione o valor pai"> <input type="submit" value="enviar" id="idtAddVal" onclick="submitAddVal()">
+
+    <h2>Adicione uma conexão (filho):</h2>
+    <input type="number" name="number" id="addConectionDad" placeholder="Adicione o valor pai"> <input type="number" name="number" id="addConectionSon" placeholder="Adicione o valor filho (conexão)"> <input type="submit" value="enviar" id="idtAddConection" onclick="submitAddConection()">
+
+    <h2>Desvincule uma conexão (filho):</h2>
+    <input type="number" name="number" id="unlinkConectionDad" placeholder="Qual pai o pertence ?"> <input type="number" name="number" id="unlinkConectionSon" placeholder="Desvincule o valor filho (conexão)"> <input type="submit" value="enviar" id="idUnlinkConection" onclick="submitUnlinkConection()"> 
+
+    <h2>Desvincule o valor (pai):</h2>
+    <input type="number" name="number" id="unlinkVal" placeholder="Desvincule o valor pai"> <input type="submit" value="enviar" id="idUnlinkVal" onclick="submitUnlinkVal()">
+
+    <script src="matrixScript.js"></script>
+    
+</body>
+</html>
