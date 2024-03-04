@@ -155,8 +155,8 @@ class LinkedList {
 
     // Imprimir lista
     displayList() {
-        let current = this.head;
         let listDisplay = document.getElementById('listDisplay');
+        let current = this.head;
         let listContent = '';
         
         while (current !== null) {

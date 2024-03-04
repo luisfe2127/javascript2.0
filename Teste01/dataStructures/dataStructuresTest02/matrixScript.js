@@ -39,4 +39,26 @@ class Graph {
         delete this.adjacencyList[node]
     }
 
+
+
+    displayList() {
+        let listDisplay = document.getElementById('listDisplay');
+        let current = this.head;
+        let listContent = '';
+        
+        while (current !== null) {
+            listContent += current.value + ' -> ';
+            current = current.next;
+        }
+        
+        listDisplay.textContent = listContent;
+    }
+}
+
+
+
+
+
+
+}
 }
