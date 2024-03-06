@@ -10,13 +10,13 @@ class Graph {
         if(!this.adjacencyList[node]) this.adjacencyList[node] = []
     }
 
-    addConnection(node1, node2) {
+    addConnection(node, node2) {
 
-        this.addNode(node1)
+        this.addNode(node)
         this.addNode(node2)
 
-        this.adjacencyList[node1].push(node2)
-        this.adjacencyList[node2].push(node1)
+        this.adjacencyList[node].push(node2)
+        this.adjacencyList[node2].push(node)
     }
 
     removeConnection(node1, node2) {

@@ -11,12 +11,12 @@ class Graph {
         }
     }
 
-    addConection(node1, node2) {
-        this.addNode(node1)
-        this.addNode(node2)
+    addConection(value, value2) {
+        this.addNode(value)
+        this.addNode(value2)
 
-        this.adjacencyList[node1].push(node2)
-        this.adjacencyList[node2].push(node1)
+        this.adjacencyList[value].push(value2)
+    
     }
 
     removeConnection(node1, node2) {
@@ -56,7 +56,6 @@ function updateDisplay() {
 
 }
 
-
 function submitAddVal() {
     const value = document.getElementById("addVal").value;
     matrix.addNode(value);
@@ -64,13 +63,7 @@ function submitAddVal() {
     updateDisplay();
 }
 
-function addConection() {
-
-    let valDad = document.getElementById("addConectionDad").value
-    let valNewSon = document.getElementById("addConectionSon").value
-
-    matrix.insert(valDad, valNewSon)
-}
+ 
 
 function removeConnection() {
 
