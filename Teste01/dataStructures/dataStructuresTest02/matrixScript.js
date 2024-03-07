@@ -46,7 +46,9 @@ class Graph {
 
 let matrix = new Graph()
 
-function updateDisplay() {
+//ADICIONAR UM NÓ
+
+function updateDisplay01() {
     const displayList = document.getElementById("displayList");
     displayList.innerHTML = ""; 
 
@@ -60,10 +62,59 @@ function submitAddVal() {
     const value = document.getElementById("addVal").value;
     matrix.addNode(value);
 
-    updateDisplay();
+    updateDisplay01();
 }
 
- 
+//ADICIONAR UMA CONEXÃO
+
+function updateDisplay02() {
+    const displayList = document.getElementById("displayList");
+    displayList.innerHTML = ""; 
+   // let current = length > adjacencyList[value] 
+
+    if(value === value || value === null) {
+        displayList.innerHTML += matrix.adjacencyList[value] + value2 + ", "
+
+       /* while(current !== null) {
+            current = current.next
+            delete current 
+
+            if(current == null) break
+            
+        }*/
+    }
+
+}
+
+function submitAddConection() {
+
+    let value = document.getElementById("addConectionDad").value
+    let value2 = document.getElementById("addConectionSon").value
+
+    matrix.addConection(value, value2)
+    updateDisplay02()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function removeConnection() {
 
