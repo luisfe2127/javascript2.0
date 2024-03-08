@@ -12,19 +12,15 @@ class Graph {
     }
 
     addConection(value, value2) {
-        this.addNode(value)
-        this.addNode(value2)
 
         this.adjacencyList[value].push(value2)
     
     }
 
-    removeConnection(node1, node2) {
-        if(!this.adjacencyList[node1] || !this.adjacencyList[node2]) return
+    removeConnection(value, value2) {
+        if(!this.adjacencyList[value] || !this.adjacencyList[value2]) return
 
-        this.adjacencyList[node1] = this.adjacencyList[node1].filter(v = v !== node2)
-
-        this.adjacencyList[node2] = this.adjacencyList[node2].filter(v = v !== node1)
+        this.adjacencyList[value] = this.adjacencyList[value].filter(v = v !== value2)
 
     }
 
@@ -70,18 +66,9 @@ function submitAddVal() {
 function updateDisplay02() {
     const displayList = document.getElementById("displayList");
     displayList.innerHTML = ""; 
-   // let current = length > adjacencyList[value] 
 
-    if(value === value || value === null) {
-        displayList.innerHTML += matrix.adjacencyList[value] + value2 + ", "
-
-       /* while(current !== null) {
-            current = current.next
-            delete current 
-
-            if(current == null) break
-            
-        }*/
+    if(value === value) {
+        displayList.innerHTML += matrix.adjacencyList[value] + value2 + ", " 
     }
 
 }
@@ -93,6 +80,25 @@ function submitAddConection() {
 
     matrix.addConection(value, value2)
     updateDisplay02()
+
+//REMOVER UMA CONEXÃO
+
+}
+
+function updateDisplay03() {
+    const displayList = document.getElementById("displayList");
+    displayList.innerHTML = "";
+
+}
+
+function submitUnlinkConection() {
+
+    let value = document.getElementById("unlinkConectionDad").value
+    let value2 = document.getElementById("unlinkConectionSon").value
+
+    matrix.removeConnection(value, value2)
+
+    updateDisplay03() 
 }
 
 
@@ -105,25 +111,6 @@ function submitAddConection() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-function removeConnection() {
-
-    let valDad = document.getElementById("unlinkConectionDad").value
-    let valSon = document.getElementById("unlinkConectionSon").value
-
-    matrix.remove(valDad, valSon)
-    
-}
 
 function removeNode() {
 
