@@ -20,7 +20,7 @@ class Graph {
     removeConnection(value, value2) {
         if(!this.adjacencyList[value] || !this.adjacencyList[value2]) return
 
-        this.adjacencyList[value] = this.adjacencyList[value].filter(v = v !== value2)
+        this.adjacencyList[value] = this.adjacencyList[value].filter(v => v !== value2)
 
     }
 
@@ -44,7 +44,7 @@ let matrix = new Graph()
 
 //ADICIONAR UM NÓ
 
-function updateDisplay01() {
+function updateDisplay() {
     const displayList = document.getElementById("displayList");
     displayList.innerHTML = ""; 
 
@@ -58,14 +58,13 @@ function submitAddVal() {
     const value = document.getElementById("addVal").value;
     matrix.addNode(value);
 
-    updateDisplay01();
+    updateDisplay();
 }
 
 //ADICIONAR UMA CONEXÃO
 
 function updateDisplay02() {
     const displayList = document.getElementById("displayList");
-    displayList.innerHTML = ""; 
 
     if(value === value) {
         displayList.innerHTML += matrix.adjacencyList[value] + value2 + ", " 
@@ -85,11 +84,15 @@ function submitAddConection() {
 
 }
 
-function updateDisplay03() {
+/*function updateDisplay() {
     const displayList = document.getElementById("displayList");
-    displayList.innerHTML = "";
 
-}
+    if(value === value || value2 === value2) {
+
+        displayList.innerHTML = matrix.adjacencyList + delete adjacencyList.value2
+    }
+
+}*/
 
 function submitUnlinkConection() {
 
@@ -98,7 +101,7 @@ function submitUnlinkConection() {
 
     matrix.removeConnection(value, value2)
 
-    updateDisplay03() 
+    updateDisplay() 
 }
 
 
