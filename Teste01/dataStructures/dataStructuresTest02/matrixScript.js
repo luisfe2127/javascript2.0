@@ -22,6 +22,12 @@ class Graph {
 
         this.adjacencyList[value] = this.adjacencyList[value].filter(v => v !== value2)
 
+        this.adjacencyList[value2] = this.adjacencyList[value2].filter(v => v !== value); 
+
+    updateDisplay();
+
+        
+
     }
 
     removeNode(node) {
@@ -48,9 +54,11 @@ function updateDisplay() {
     const displayList = document.getElementById("displayList");
     displayList.innerHTML = ""; 
 
-    for (let value in matrix.adjacencyList) {
+        for (let value in matrix.adjacencyList) {
         displayList.innerHTML += value + ": " + matrix.adjacencyList[value].join(", ") + "<br>";
+
     }
+
 
 }
 
@@ -78,30 +86,30 @@ function submitAddConection() {
     let value2 = document.getElementById("addConectionSon").value
 
     matrix.addConection(value, value2)
-    updateDisplay02()
+    updateDisplay()
 
 //REMOVER UMA CONEXÃO
 
 }
 
-/*function updateDisplay() {
+function updateDisplay03() {
     const displayList = document.getElementById("displayList");
-
-    if(value === value || value2 === value2) {
-
-        displayList.innerHTML = matrix.adjacencyList + delete adjacencyList.value2
+    if (value === value || value2 === value2) { 
+        matrix.removeConnection(value, value2);
+        updateDisplay();
     }
 
-}*/
+}
+
 
 function submitUnlinkConection() {
 
-    let value = document.getElementById("unlinkConectionDad").value
-    let value2 = document.getElementById("unlinkConectionSon").value
-
-    matrix.removeConnection(value, value2)
-
-    updateDisplay() 
+        let value = document.getElementById("unlinkConectionDad").value;
+        let value2 = document.getElementById("unlinkConectionSon").value;
+    
+        matrix.removeConnection(value, value2);
+        updateDisplay03();
+    
 }
 
 
@@ -115,12 +123,12 @@ function submitUnlinkConection() {
 
 
 
-function removeNode() {
+/*function removeNode() {
 
     let valDad = document.getElementById("unlinkVal").value
 
     matrix.remove(valDad)
-}
+}*/
 
 
 
