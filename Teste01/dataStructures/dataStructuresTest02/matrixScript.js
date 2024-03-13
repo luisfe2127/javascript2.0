@@ -22,11 +22,7 @@ class Graph {
 
         this.adjacencyList[value] = this.adjacencyList[value].filter(v => v !== value2)
 
-        this.adjacencyList[value2] = this.adjacencyList[value2].filter(v => v !== value); 
-
-    updateDisplay();
-
-        
+        this.adjacencyList[value2] = this.adjacencyList[value2].filter(v => v !== value);     
 
     }
 
@@ -58,8 +54,6 @@ function updateDisplay() {
         displayList.innerHTML += value + ": " + matrix.adjacencyList[value].join(", ") + "<br>";
 
     }
-
-
 }
 
 function submitAddVal() {
@@ -73,7 +67,7 @@ function submitAddVal() {
 
 function updateDisplay02() {
     const displayList = document.getElementById("displayList");
-
+    
     if(value === value) {
         displayList.innerHTML += matrix.adjacencyList[value] + value2 + ", " 
     }
@@ -95,21 +89,20 @@ function submitAddConection() {
 function updateDisplay03() {
     const displayList = document.getElementById("displayList");
     if (value === value || value2 === value2) { 
-        matrix.removeConnection(value, value2);
-        updateDisplay();
+
+        
     }
 
 }
 
-
 function submitUnlinkConection() {
 
-        let value = document.getElementById("unlinkConectionDad").value;
-        let value2 = document.getElementById("unlinkConectionSon").value;
+        let value = document.getElementById("unlinkConectionDad");
+        let value2 = document.getElementById("unlinkConectionSon");
     
         matrix.removeConnection(value, value2);
-        updateDisplay03();
-    
+        updateDisplay();
+
 }
 
 
