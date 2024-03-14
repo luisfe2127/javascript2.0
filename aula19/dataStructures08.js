@@ -52,5 +52,4 @@ local.addConnection("Brasil", "EUA")
 local.removeConnection("Brasil", "EUA")
 local.addConnection("Brasil", "Inglaterra")
 
-
 console.log(local)
