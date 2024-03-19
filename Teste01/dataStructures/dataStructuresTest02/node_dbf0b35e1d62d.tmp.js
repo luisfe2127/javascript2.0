@@ -5,7 +5,9 @@ class Graph {
     }
 
     addNode(value) {
-        if(!this.adjacencyList[value]) this.adjacencyList[value] = []
+        if (!this.adjacencyList[value]) {
+            this.adjacencyList[value] = []
+        }
     }
 
     addConnection(value, value2) {
@@ -76,7 +78,7 @@ function submitUnlinkConnection() {
 
 //REMOVER UM NÓ
 
-function submitUnlinkVal() {
+function submitRemoveNode() {
     
     let value = document.getElementById("unlinkVal").value
     matrix.removeNode(value)
@@ -97,5 +99,7 @@ matrix.addConnection("y", "2")
 matrix.addConnection("y", "3")
 matrix.addConnection("y", "4")
 matrix.addConnection("y", "5")
+
+matrix.removeNode("y")
 
 console.log(matrix)
