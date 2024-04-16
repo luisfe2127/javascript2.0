@@ -5,6 +5,11 @@
 //clear: limpa a pilha 
 //size: informa o tamanho da pilha 
 //print: mostrar pilha no console 
+//concat: Une dois arrays em um
+//join: Este método cria uma string juntando todos os elementos de um array. 
+//sort: Deixa os valores de um array em ordem crescente. 
+//map: Este método retorna um novo array do valor retornado da execução de uma função em cada item do array. 
+//filter: Este método retorna um novo array contendo os itens para os quais a função retornou verdadeiro. 
 
 //PILHA
 
