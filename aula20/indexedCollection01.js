@@ -93,8 +93,11 @@ let arr = [2, 5, 6, 3, 8, 9];
 let newArr = arr.map(function (val, index) {
     return { key: index, value: val * val };
 })
- 
 console.log(newArr)
+//ou
+const a1 = ["a", "b", "c"];
+const a3 = a1.map((item) => item.toUpperCase());
+console.log(a3);
 
 const numbers = [1, 4, 9, 16, 25];
 const squareRoots = numbers.map(num => Math.sqrt(num));
@@ -110,3 +113,59 @@ let a2 = myArr1.filter(function (item) {
 });
  
 console.log(a2);
+
+//slice: método extrai uma seção de um array e retorna um novo array.
+
+let myArray04 = ["a", "b", "c", "d", "e"];
+myArray04 = myArray04.slice(1, 4); 
+console.log(myArray04)
+//ou 
+const myArray06 = ["1", "2", "3", "4", "5"];
+myArray06.splice(1, 3, "a", "b", "c", "d");
+console.log(myArray06)
+
+//at: método retorna o elemento no índice especificado na matriz ou undefinedse o índice estiver fora do intervalo. É usado principalmente para índices negativos que acessam elementos do final do array.
+
+let myArray05 = ["a", "b", "c", "d", "e"];
+myArray05.at(-2)
+console.log(myArray05)
+
+//O flat()método retorna uma nova matriz com todos os elementos da submatriz concatenados recursivamente até a profundidade especificada.
+
+let myArray07 = [1, 2, [3, 4]];
+myArray07 = myArray07.flat();
+console.log(myArray07)
+
+//O flatMap()método é executado map()seguido por um flat()de profundidade 1.
+
+const a4 = ["a", "b", "c"];
+const a5 = a4.flatMap((item) => [item.toUpperCase(), item.toLowerCase()]);
+console.log(a5);
+
+//O find()método retorna o primeiro item para o qual callbackfoi retornado true.
+
+const a7 = ["a", 10, "b", 20, "c", 30];
+const i = a7.find((item) => typeof item === "number");
+console.log(i);
+
+//O every()método retorna trueif callbackretorna truepara cada item do array.
+
+function isNumber(value) {
+  return typeof value === "number";
+}
+const a8 = [1, 2, 3];
+console.log(a8.every(isNumber)); // true
+const a9 = [1, "2", 3];
+console.log(a9.every(isNumber)); // false
+
+//O some()método retorna truese callbackretornar truepelo menos um item da matriz.
+
+function isNumber(value) {
+  return typeof value === "number";
+}
+const a10 = [1, 2, 3];
+console.log(a10.some(isNumber)); // true
+const a11 = [1, "2", 3];
+console.log(a11.some(isNumber)); // true
+const a12 = ["1", "2", "3"];
+console.log(a12.some(isNumber)); // false
