@@ -169,3 +169,36 @@ const a11 = [1, "2", 3];
 console.log(a11.some(isNumber)); // true
 const a12 = ["1", "2", "3"];
 console.log(a12.some(isNumber)); // false
+
+//O Object.groupBy()método pode ser utilizado para agrupar os elementos de um array, utilizando uma função de teste que retorna uma string indicando o grupo do elemento atual.
+
+//Aqui temos uma matriz de inventário simples que contém objetos "comida" que possuem a namee a type.
+
+let students01 = [
+    {
+        nome: "Luvinhas",
+        idade: "18",
+    },
+    {
+        nome: "Jorgin",
+        idade: "28",
+    },
+    {
+        nome: "Boinha",
+        idade: "45",
+    },
+    {
+        nome: "Soupa",
+        idade: "17",
+    },
+    {
+        nome: "Celsin",
+        idade: "25",
+    },
+]
+//Para usar Object.groupBy(), você fornece uma função de retorno de chamada que é chamada com o elemento atual e, opcionalmente, o índice e a matriz atuais e retorna uma string indicando o grupo do elemento.
+//O código abaixo usa uma função de seta para retornar o typevalor de cada elemento da matriz (isso usa sintaxe de desestruturação de objeto para argumentos de função para descompactar o typeelemento do objeto passado). O resultado é um objeto que possui propriedades nomeadas de acordo com as strings exclusivas retornadas pelo retorno de chamada. Cada propriedade recebe um array contendo os elementos do grupo.
+
+let studentsList01 = Object.groupBy(students01, (students01) => students01.idade >= 25)
+
+console.log(studentsList01)
