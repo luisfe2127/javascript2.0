@@ -202,3 +202,13 @@ let students01 = [
 let studentsList01 = Object.groupBy(students01, (students01) => students01.idade >= 25)
 
 console.log(studentsList01)
+
+//O código a seguir cria uma matriz bidimensional.
+0
+const a = new Array(4);
+for (let i = 0; i < 4; i++) {
+  a[i] = new Array(4);
+  for (let j = 0; j < 4; j++) {
+    a[i][j] = `[${i}, ${j}]`;
+  }
+}
