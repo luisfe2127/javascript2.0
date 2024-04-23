@@ -10,6 +10,7 @@
 //sort: Deixa os valores de um array em ordem crescente. 
 //map: Este método retorna um novo array do valor retornado da execução de uma função em cada item do array. 
 //filter: Este método retorna um novo array contendo os itens para os quais a função retornou verdadeiro. 
+//splice: Remover um item pela posição do índice
 
 //PILHA
 
