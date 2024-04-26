@@ -18,3 +18,4 @@ for (const value of myMap.values()) {
 for (const [key, value] of myMap.entries()) {
     console.log(key + " = " + value);
 }
+
