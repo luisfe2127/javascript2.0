@@ -1,12 +1,30 @@
 //Funções aninhadas 
 
-function soma(...valores) {
-    function somar() {
-        let compriment = valores.length
-        let res = 0
-        for(i = 0; i < compriment; i++) {
-            res += compriment[i]
-        }
+    //const soma = (...valores) => {
+    //const somar = val => {
+      //  let res = 0
+
+       // for(v of val) 
+          //  res += v
+         //   return res
+        
+   // }
+   // return somar(valores)
+   // }
+
+//console.log(soma(3,5,6))
+
+const multiplicaçao = (...valores) => {
+    const multiplicar = val => {
+        let res = 1
+
+        for(v of val) 
+            res *= v
+        return res
     }
+    return multiplicar(valores)
 }
+
+console.log(multiplicaçao(2,3,8,10))
+
 
